@@ -5,15 +5,18 @@ environment:
     wait: "10"
     firstName: "Arkadiusz"
     lastName: "Wellknown"
+    flag: "N"
   test:
     ulr: "https://seleniumui.moderntester.pl/"
     browser: "CHROME"
     wait: "15"
     firstName: "Mateusz"
     lastName: "Unknown"
+    flag: "N"
   stag:
     ulr: "https://seleniumui.moderntester.pl/"
     browser: "FIREFOX"
     wait: "20"
     firstName: "Dariusz"
     lastName: "MediumKnown"
+    flag: "Y"

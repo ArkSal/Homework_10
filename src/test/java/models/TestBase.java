@@ -2,6 +2,7 @@ package models;
 
 import handlers.DriverFactory;
 import handlers.FileHandler;
+import models.configuration.EnvironmentConfig;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -19,10 +20,12 @@ public class TestBase {
     protected WebDriver driver;
     protected Actions actions;
     protected WebDriverWait wait;
+    protected static EnvironmentConfig environmentConfig;
 
     @BeforeAll
     static void setDriver() {
-        DriverFactory.getDriver(Browsers.valueOf(ConfigProvider.getConfig().getBrowser()));
+        environmentConfig = ConfigProvider.getConfig();
+        DriverFactory.getDriver(Browsers.valueOf(environmentConfig.getBrowser()));
         logger.info("WebDriver initialized");
         FileHandler.createDirectory();
         logger.info("Download files directories created");
@@ -30,11 +33,11 @@ public class TestBase {
 
     @BeforeEach
     void setUp() {
-        driver = DriverFactory.getDriverOptions(Browsers.valueOf(ConfigProvider.getConfig().getBrowser()));
+        driver = DriverFactory.getDriverOptions(Browsers.valueOf(environmentConfig.getBrowser()));
         logger.info("Driver initialized with additional options");
         actions = new Actions(driver);
         logger.info("Action initialized");
-        int waitValue = Integer.parseInt(ConfigProvider.getConfig().getWait());
+        int waitValue = Integer.parseInt(environmentConfig.getWait());
         wait = new WebDriverWait(driver, Duration.ofSeconds(waitValue));
         driver.get(ConfigProvider.getConfig().getUlr());
         logger.info("WaitDriver with " + waitValue + "secs value initialized");

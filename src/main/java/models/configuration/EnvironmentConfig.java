@@ -9,6 +9,7 @@ public class EnvironmentConfig {
     private String wait;
     private String firstName;
     private String lastName;
+    private String flag;
 
     public String getUlr() {
         return ulr;
@@ -28,5 +29,9 @@ public class EnvironmentConfig {
 
     public String getLastName() {
         return lastName;
+    }
+
+    public String getFlag() {
+        return flag;
     }
 }

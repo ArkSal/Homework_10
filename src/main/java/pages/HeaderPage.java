@@ -1,6 +1,5 @@
 package pages;
 
-import models.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -26,12 +25,12 @@ public class HeaderPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    public HeaderPage clickBasicMenuIcon(){
+    public HeaderPage clickBasicMenuIcon() {
         actions.moveToElement(basicMenuIcon).build().perform();
         return this;
     }
 
-    public HeaderPage goToFormPage(){
+    public HeaderPage goToFormPage() {
         driver.findElement(By.cssSelector("#form-item")).click();
         return this;
     }

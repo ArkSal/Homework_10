@@ -1,7 +1,6 @@
 package pages;
 
 import handlers.FileHandler;
-import models.BasePage;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,7 +8,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import providers.ConfigProvider;
 import providers.RandomDataGenerator;
 
 import java.util.List;
@@ -62,8 +60,8 @@ public class FormPage extends BasePage {
     }
 
     public FormPage fillTheFormWithConstantData() {
-        firstNameTextField.sendKeys(ConfigProvider.getConfig().getFirstName());
-        lastNameTextField.sendKeys(ConfigProvider.getConfig().getLastName());
+        firstNameTextField.sendKeys(environmentConfig.getFirstName());
+        lastNameTextField.sendKeys(environmentConfig.getLastName());
         emailTextField.sendKeys("mistrz@gmail.com");
         sexRadioButtons.get(RandomDataGenerator.randomFunction(2)).click();
         ageTextField.sendKeys(String.valueOf(RandomDataGenerator.randomFunction(18, 50)));
