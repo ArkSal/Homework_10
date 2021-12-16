@@ -20,7 +20,7 @@ public class ConfigProvider {
             return readConfig().getEnvironment(getEnvName());
         } catch (Exception e) {
             e.printStackTrace();
-            logger.error("Wrong ");
+            logger.error("Wrong environment value typed");
         }
         return null;
     }
