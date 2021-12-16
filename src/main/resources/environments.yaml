@@ -1,0 +1,19 @@
+environment:
+  integrate:
+    ulr: "https://seleniumui.moderntester.pl/"
+    browser: "CHROME"
+    wait: "10"
+    firstName: "Arkadiusz"
+    lastName: "Wellknown"
+  test:
+    ulr: "https://seleniumui.moderntester.pl/"
+    browser: "CHROME"
+    wait: "15"
+    firstName: "Mateusz"
+    lastName: "Unknown"
+  stag:
+    ulr: "https://seleniumui.moderntester.pl/"
+    browser: "FIREFOX"
+    wait: "20"
+    firstName: "Dariusz"
+    lastName: "MediumKnown"
