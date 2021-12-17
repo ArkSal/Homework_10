@@ -5,7 +5,7 @@ environment:
     wait: "10"
     firstName: "Arkadiusz"
     lastName: "Wellknown"
-    flag: "N"
+    flag: "Y"
   test:
     ulr: "https://seleniumui.moderntester.pl/"
     browser: "CHROME"
@@ -19,4 +19,4 @@ environment:
     wait: "20"
     firstName: "Dariusz"
     lastName: "MediumKnown"
-    flag: "Y"
+    flag: "N"
